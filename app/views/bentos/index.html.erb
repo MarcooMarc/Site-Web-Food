@@ -1,0 +1,21 @@
+
+<h1 class="mt-4">MES BENTOS</h1>
+<div class="row">
+<%@bento.each do |bento|%>
+  <div class="col-sm-4 pb-3">
+      
+      <div class="card">
+
+
+        <div class="card-body">
+          <h5 class="card-title"><%=bento.titre%></h5>
+          <p class="card-text"><%=bento.description%></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><%=bento.date%></small>
+        </div>
+      </div>
+  </div>
+  
+<%end%>
+</div>

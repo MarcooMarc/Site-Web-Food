@@ -1,0 +1,20 @@
+<div class='row align-items-center'>
+  <div class='col-12 col-md-8 pr-30'>
+	<h1>Contact</h1>
+	<%= simple_form_for @contact do |f| %>
+
+	<%= f.input :name, class:'form-control', placeholder: 'Nom', label:false%>
+	<%= f.input :surmane, class:'form-control', placeholder: 'Prénom', label:false %>
+	<%= f.input :email, class:'form-control', placeholder: 'monadresse@domaine.fr',label:false %>
+	<%= f.input :message, class:'h-100 form-control', placeholder: 'Poser votre question',label:false%>
+	<%= f.submit :"ENVOYER", class: 'btn btn-success float-right mt-2' %>
+  </div>
+	<% end %>
+  <div class='col-12 col-md-4'> 
+    <figure class="figure">
+
+    	
+      <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
+    </figure>
+  </div>
+</div>

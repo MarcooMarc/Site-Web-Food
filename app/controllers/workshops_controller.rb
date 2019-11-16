@@ -1,0 +1,3 @@
+class WorkshopsController < ApplicationController
+
+end

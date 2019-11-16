@@ -1,0 +1,11 @@
+class Customer < ApplicationRecord
+  validates :name, presence: true
+  validates :surname, presence: true
+
+  def self.find_or_create(name, surname, email, phonenumber, adress, city, postalcode)
+    customer = self.find_by_email(email)
+    return customer unless customer.nil?
+
+    self.create(name: name, surname: surname, email: email, phonenumber: phonenumber, adress: adress, city: city, postalcode: postalcode)
+  end
+end

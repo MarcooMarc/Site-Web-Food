@@ -1,0 +1,19 @@
+
+<div class='row align-items-center'>
+  <div class='col-12 col-md-8 pr-30'>
+	  <%@home.each do |home| %>
+	  <%=home.commander%>
+		<%=  link_to "COMMANDER",macommande_path, :class =>'btn btn-success float-right pr-10'%>
+	  <%end%>
+  </div>
+	
+  <div class='col-12 col-md-4'>	
+    <figure class="figure">
+
+
+      <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
+    </figure>
+  </div>
+
+</div>
+
