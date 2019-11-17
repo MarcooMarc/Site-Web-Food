@@ -33,3 +33,4 @@ class OrdersController < ApplicationController
     params.require('customer').permit(:name, :surname, :email, :phonenumber, :adress, :city, :postalcode)
   end
 end
+

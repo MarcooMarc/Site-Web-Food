@@ -5,7 +5,7 @@
   <div class="card my-3 ">
     <div class="row">
       <div class="col-md-4 ">
-        <p>image</p>
+        <%= cl_image_tag workshop.photo, class:'card-img'%>
       </div>
 
       <div class="col-md-8">
@@ -25,7 +25,8 @@
 
               <div class="d-flex justify-content-between">
                 <p class="text-muted"><%=workshop.price%> euros</p>
-                <%=  link_to "S'INSCRIRE",monworkshops_path, :class =>'btn btn-success float-right pr-10'%>
+
+                <%=  link_to "S'INSCRIRE",{:controller => "bookings", :action => "new", :workshop_id => workshop.id}, :class =>'btn btn-success float-right pr-10'%>
               </div>
             </div>
           </div>

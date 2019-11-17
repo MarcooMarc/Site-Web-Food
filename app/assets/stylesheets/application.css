@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 textarea.form-control {
     height: 30vh !important;
 }
@@ -45,5 +49,3 @@ textarea.form-control {
     flex-basis: auto;
  	}
 }
-
-

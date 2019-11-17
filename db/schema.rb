@@ -38,10 +38,9 @@ ActiveRecord::Schema.define(version: 2019_11_16_134420) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "seat"
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "workshop"
     t.bigint "trainee_id"
+    t.datetime "created_at", null: false
     t.index ["trainee_id"], name: "index_bookings_on_trainee_id"
   end
 
@@ -76,9 +75,8 @@ ActiveRecord::Schema.define(version: 2019_11_16_134420) do
     t.integer "quantities"
     t.string "day"
     t.boolean "delivery"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "customer_id"
+    t.datetime "created_at", null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 

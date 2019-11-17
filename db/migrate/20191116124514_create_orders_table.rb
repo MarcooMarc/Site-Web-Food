@@ -4,7 +4,9 @@ class CreateOrdersTable < ActiveRecord::Migration[5.2]
       t.integer :quantities
       t.string :day
       t.boolean :delivery
-      t.timestamps
+      t.references :customer
+      t.datetime :created_at, null: false
+
     end
   end
 end

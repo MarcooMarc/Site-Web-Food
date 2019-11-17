@@ -2,36 +2,39 @@
 <div class='row'>
   <div class='col-12 col-md-8 pr-30'>
   <h1 class="mt-4">Valider votre inscription</h1>
+    
     <%= simple_form_for @booking do |f|%>
+    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }%>
+    <%= f.input :seat, input_html: { min: '1', step: 'any'} , placeholder: 'Place', required: true%>
+    
 
-    <%= f.input :seat, input_html: { min: '1', step: 'any'} %>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Prénom</span>
       </div>
-    <%= text_field_tag "trainee[surname]", "", class:'form-control', placeholder: 'tapez ici'%>
+    <%= text_field_tag "trainee[surname]", "", class:'form-control', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Nom</span>
       </div>
-    <%= text_field_tag "trainee[name]", "", class:'form-control', placeholder: 'tapez ici'%>
+    <%= text_field_tag "trainee[name]", "", class:'form-control', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "trainee[email]", "", class:'form-control', placeholder: 'mon.email@email.com'%>
+    <%= text_field_tag "trainee[email]", "", class:'form-control', placeholder: 'mon.email@email.com', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Mobile</span>
       </div>
-    <%= text_field_tag "trainee[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **'%>
+    <%= text_field_tag "trainee[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **', required: true%>
     </div>
 
 
