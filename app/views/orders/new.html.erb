@@ -34,41 +34,34 @@
       <%= text_field_tag "customer[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **', required: true%>
       </div>
 
-          <div class="hide">
+   
             <div class="input-group flex-nowrap py-2">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Adresse</span>
           </div>
         <%= text_field_tag "customer[adress]", "", class:'form-control', placeholder: 'adresse', required: true%>
         </div>
-      </div>
 
-          <div class="hide">
             <div class="input-group flex-nowrap py-2">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Code Postal</span>
           </div>
         <%= text_field_tag "customer[postalcode]", "", class:'form-control', placeholder: 'code postal', required: true%>
         </div>
-      </div>
 
-          <div class="hide">
             <div class="input-group flex-nowrap py-2">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Ville</span>
           </div>
         <%= text_field_tag "customer[city]", "", class:'form-control', placeholder: 'ville', required: true%>
         </div>
-      </div>
 
-          <div class="hide">
             <div class="input-group flex-nowrap py-2">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping">Lieu</span>
           </div>
         <%= select_tag "customer[lieu]", raw("<option>Antony</option> <option>Verrière-le-Buisson</option>"), class:'form-control', :prompt => 'Choissisez votre lieu de livraison', required: true%>
         </div>
-      </div>
       
       
 
