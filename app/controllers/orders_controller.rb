@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
   private
 
   def commande_params
-    params.require('order').permit(:quantities, :delivery)
+    params.require('order').permit(:quantities, :delivery, :day)
   end
 
   def customer_params

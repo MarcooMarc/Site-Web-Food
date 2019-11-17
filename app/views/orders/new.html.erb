@@ -3,14 +3,9 @@
   <div class='col-12 col-md-8 pr-30'>
 <h1 class="mt-4">Passer votre commande</h1>
     <%= simple_form_for @order do |f|%>
-    <%= f.input :quantities, input_html: { min: '1', step: 'any'} , placeholder: 'quantité'%>
-
-    <div class="input-group flex-nowrap py-2">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">Prénom</span>
-      </div>
-    <%= text_field_tag "customer[surname]","", class:'form-control', placeholder: 'tapez ici', required: true%>
-    </div>
+    <%= f.input :quantities, input_html: { min: '1', step: 'any'} , placeholder: 'quantité', required: true%>
+    <%= f.input :delivery, :as => :select, collection: [['0', 'Oui'], ['1', 'Non']], label_method: :second, value_method: :first , required: true%>
+    <%= f.input :day,  as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label_method: :second, value_method: :first , required: true%>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
@@ -40,44 +35,34 @@
     <%= text_field_tag "customer[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **', required: true%>
     </div>
     
-    <div class="input-group flex-nowrap py-2">
+    <div class="input-group flex-nowrap py-2 d-none" id="hide">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">Adresse</span>
+        <span class="input-group-text" id="addon-wrapping" >Adresse</span>
       </div>
     <%= text_field_tag "customer[adress]", "", class:'form-control', placeholder: 'adresse', required: true%>
     </div>
 
-    <div class="input-group flex-nowrap py-2">
+    <div class="input-group flex-nowrap py-2 d-none id="hide"">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">Code Postal</span>
+        <span class="input-group-text" id="addon-wrapping" >Code Postal</span>
       </div>
     <%= text_field_tag "customer[postalcode]", "", class:'form-control', placeholder: 'code postal', required: true%>
     </div>
 
-    <div class="input-group flex-nowrap py-2">
+    <div class="input-group flex-nowrap py-2 d-none id="hide"">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">Ville</span>
+        <span class="input-group-text" id="addon-wrapping" >Ville</span>
       </div>
     <%= text_field_tag "customer[city]", "", class:'form-control', placeholder: 'ville', required: true%>
     </div>
 
- 
-
-
-    <div class="input-group flex-now py-2">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">Livraison</span>
-      </div>
-    <%= select_tag "customer[livraison]",raw("<option>Oui</option> <option>Non</option>"), class:'form-control', :prompt => 'Souhaitez vous être livré ?', required: true%>
-    </div>
-    <p>*Les commandes sans livraisons sont à récupérer sur place à gare de Massy-Palaiseau.</p>
-
-    <div class="input-group flex-nowrap py-2">
+    <div class="input-group flex-nowrap py-2 d-none" id="hide">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Lieu</span>
       </div>
-    <%= select_tag "customer[lieu]", raw("<option>Massy-Palaiseau</option><option>Antony</option> <option>Verrière-le-Buisson</option>"), class:'form-control', :prompt => 'Choissisez votre lieu de livraison', required: true%>
+    <%= select_tag "customer[lieu]", raw("<option>Antony</option> <option>Verrière-le-Buisson</option>"), class:'form-control', :prompt => 'Choissisez votre lieu de livraison', required: true%>
     </div>
+    
 
     <%= f.submit:"COMMANDER", class: 'btn btn-success float-right mt-2'%>   
     <% end %>
