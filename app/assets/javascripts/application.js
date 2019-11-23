@@ -2,8 +2,7 @@ console.log('test assets');
 
 
 window.onload= function (){
-console.log(document.getElementById('order_delivery'));
-	const trigger = document.getElementById('order_delivery')	  
+	const trigger = document.getElementById('order_delivery');	  
 	const choice = document.querySelectorAll('.hide');
  	trigger.addEventListener('change', () => { 
 	  if (trigger.value == "0") {
