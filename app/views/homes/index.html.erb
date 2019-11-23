@@ -8,19 +8,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-
+        <%= cl_image_tag home.photo1, class:"card-img-top"%>
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
+         <%= cl_image_tag home.photo2, class:"card-img-top"%>
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
+         <%= cl_image_tag home.photo3, class:"card-img-top"%>
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -43,14 +45,14 @@
 <div class="card-deck">
 <%@bento.each do |bento|%>
     
-  <div class="card">
+  <div class="card my-5">
     <%= cl_image_tag bento.photo, class:"card-img-top"%>
     <div class="card-body">
       <h5 class="card-title"><%=bento.title%></h5>
       <p class="card-text"><%=bento.description%></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small class="text-muted text-right"><%=bento.date%></small>
     </div>
   </div>  
 <%end%>

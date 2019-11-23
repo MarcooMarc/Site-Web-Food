@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_16_134420) do
+ActiveRecord::Schema.define(version: 2019_11_23_124238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_134420) do
 
   create_table "bentos", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "date"
     t.string "photo"
     t.datetime "created_at", null: false
@@ -64,8 +64,9 @@ ActiveRecord::Schema.define(version: 2019_11_16_134420) do
   end
 
   create_table "homes", force: :cascade do |t|
-    t.string "photo"
-    t.text "parcours"
+    t.string "photo1"
+    t.string "photo2"
+    t.string "photo3"
     t.text "commander"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,7 +92,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_134420) do
 
   create_table "workshops", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "schedule"
     t.string "date"
     t.integer "seat"
