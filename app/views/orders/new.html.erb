@@ -3,9 +3,34 @@
   <div class='col-12 col-md-8 pr-30'>
     <h1 class="mt-4" id="salope">Passer votre commande</h1>
       <%= simple_form_for @order do |f|%>
-      <%= f.input :quantities, input_html: { min: '1', step: 'any'} , placeholder: 'quantité', required: true%>
-      <%= f.input :delivery, :as => :select, collection: [['0', 'Oui'], ['1', 'Non']], class:'order_delivery', label_method: :second, value_method: :first%>
-      <%= f.input :day,  as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label_method: :second, value_method: :second %>
+       <div class="input-group flex-nowrap py-2">
+          <div class="input-group-prepend">
+             <span class="input-group-text" id="addon-wrapping">Quantités</span>
+          </div>
+        <%= f.input :quantities,wrapper_html: { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
+      </div>
+
+      <div class="input-group flex-nowrap py-2">
+          <div class="input-group-prepend">
+             <span class="input-group-text" id="addon-wrapping">Livraison</span>
+          </div>
+      <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [['0', 'Oui'], ['1', 'Non']], label: false, label_method: :second, value_method: :first%>
+      </div>
+
+
+      <div class="input-group flex-nowrap py-2">
+          <div class="input-group-prepend">
+             <span class="input-group-text" id="addon-wrapping">Jour de livraison</span>
+          </div>
+      <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false,  label_method: :second, value_method: :second %>
+      </div>
+      <div class="input-group flex-nowrap py-2">
+          <div class="input-group-prepend">
+             <span class="input-group-text hide d-none" id="addon-wrapping">Lieu de livraison</span>
+           </div>
+        <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières chez CVB, jeudi à 11h'], ['2', 'Antony chez DAY BY DAY, vendredi 11 ']], label: false, label_method: :second, value_method: :second %>    
+        </div> 
+
       <div class="input-group flex-nowrap py-2">
           <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Prénom</span>
@@ -35,65 +60,62 @@
       </div>
 
    
-            <div class="input-group flex-nowrap py-2 hide d-none">
+        <div class="input-group flex-nowrap py-2 hide d-none">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Adresse</span>
           </div>
         <%= text_field_tag "customer[adress]", "", class:'form-control require-activation', placeholder: 'adresse', required: true%>
         </div>
 
-            <div class="input-group flex-nowrap py-2 hide d-none">
+        <div class="input-group flex-nowrap py-2 hide d-none">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Code Postal</span>
           </div>
         <%= text_field_tag "customer[postalcode]", "", class:'form-control require-activation', placeholder: 'code postal', required: true%>
         </div>
 
-            <div class="input-group flex-nowrap py-2 hide d-none">
+        <div class="input-group flex-nowrap py-2 hide d-none">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping" >Ville</span>
           </div>
         <%= text_field_tag "customer[city]", "", class:'form-control require-activation', placeholder: 'ville', required: true%>
       </div>
     
-        <%= f.input :delivery_place, wrapper_html: { class: 'hide d-none' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières chez CVB, jeudi à 11h'], ['2', 'Antony chez DAY BY DAY, vendredi 11 ']], label_method: :second, value_method: :second %>
-
-
-      
-      
+       
 
       <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
       <% end %>
     </div>
 
     <div class='col-12 col-md-4'> 
-      <div class='cart border'>
-        <h3 class="text-center my-2">Ma commande</h3>
+      <div class='cart border d-block'>
+        <h4 class="text-center my-3">Ma commande</h4>
         
-        <div class='d-flex justify-content-between mx-2'>
-          <p>Healing Bento Box</p>
+        <div class='d-flex justify-content-between mx-3'>
+          <span  class='p-2'>Healing Bento Box</span>
           <div class="quantities"></div>
         </div>
-        <div class='d-flex justify-content-between mx-2'>
-          <p>Prix TTC</p>         
-          <div class="price"></div>
-        </div>
-        <div class='d-flex justify-content-between mx-2'>
-          <p>Jour de la livraison</p>         
+        <div class='d-flex justify-content-between mx-3'>
+          <span class='p-2'>Jour de la livraison</span>         
           <div class="day"></div>
         </div>
-        <div class='d-flex justify-content-between mx-2'>
-          <p>Lieu de la livraison</p>         
+        <div class='d-flex justify-content-between mx-3'>
+          <span class='p-2'>Lieu de la livraison</span>         
           <div class="delivery_place"></div>
+        </div>
+        <hr>
+        <div class='d-flex justify-content-between mx-3 my-3'>
+          <span class='p-2'>Prix TTC</span>         
+          <div class="price"></div>
         </div>
 
       </div>
 
-   <!--  <figure class="figure">
-
+      <figure class="figure">
+    
 
         <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
-      </figure>-->
+      </figure>
     </div> 
   </div>
    

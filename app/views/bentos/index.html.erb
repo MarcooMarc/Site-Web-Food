@@ -1,16 +1,16 @@
 
-<h1 class="mt-4">MES BENTOS</h1>
-<div class="row">
+<h1 class="mt-3">MES BENTOS</h1>
+<div class="card-deck">
 <%@bento.each do |bento|%>
-  <div class="col-sm-4 pb-3">
+  <div class="col-lg-4 pb-3">
       
-     <div class="card">
+     <div class="card mx-0">
 
 
       <%= cl_image_tag bento.photo, class:"card-img-top"%>
         <div class="card-body">
           <h5 class="card-title"><%=bento.title%></h5>
-          <p class="card-text"><%=bento.description%></p>
+          <p class="card-text"><%=bento.description%></style></p>
         </div>
         <div class="card-footer">
           <small class="text-muted"><%=bento.date%></small>
@@ -20,3 +20,4 @@
   
 <%end%>
 </div>
+

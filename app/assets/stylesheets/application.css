@@ -12,11 +12,15 @@ textarea.form-control {
     background-color: #F7F7F7 !important;
 }
 
-.cart {
-    width: 100%;
-    height: 30vh;
+html {
+    font-size : 17px;
 }
 
+.cart {
+    width: auto;
+    height: auto;
+    background-color: #FADCD6;
+}
 
 .image {
 	width: 122px;

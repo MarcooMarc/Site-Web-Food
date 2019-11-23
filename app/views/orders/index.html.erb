@@ -1,19 +1,26 @@
 
 <div class='row align-items-center'>
-  <div class='col-12 col-md-8 pr-30'>
-	  <%@home.each do |home| %>
-	  <%=home.commander%>
-		<%=  link_to "COMMANDER",macommande_path, :class =>'btn btn-success float-right pr-10'%>
-	  <%end%>
-  </div>
+  <div class='col-12 col-md-8 p-2'>
+  <h1>Lorem Ipsum</h1>
+    <div class='py-2 mb-8'>
+      <div class='py-2'>
+	      <%@home.each do |home| %>
+  	    <%=break_line(home.commander)%>
+      </div> 
+      </div class='py-4'>
+		    <%=  link_to "COMMANDER",macommande_path, :class =>'btn btn-success float-right w-25 pr-10'%>
+      </div>
+      
 	
   <div class='col-12 col-md-4'>	
-    <figure class="figure">
-
-
+    <figure class="figure p-2">
+    </figure>
+     <figure class="figure p-2">
+      <%= cl_image_tag home.photo_commande_index, class:"card-img-top"%>
       <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
     </figure>
   </div>
+	  <%end%>
 
 </div>
 

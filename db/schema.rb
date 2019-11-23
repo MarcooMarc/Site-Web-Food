@@ -65,9 +65,11 @@ ActiveRecord::Schema.define(version: 2019_11_23_124238) do
   end
 
   create_table "homes", force: :cascade do |t|
-    t.string "photo1"
-    t.string "photo2"
-    t.string "photo3"
+    t.string "photo1_home_page"
+    t.string "photo2_home_page"
+    t.string "photo3_home_page"
+    t.string "photo_commande_index"
+    t.string "photo_commande_new"
     t.text "commander"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
