@@ -55,34 +55,46 @@
           </div>
         <%= text_field_tag "customer[city]", "", class:'form-control require-activation', placeholder: 'ville', required: true%>
       </div>
+    
+        <%= f.input :delivery_place, wrapper_html: { class: 'hide d-none' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières chez CVB, jeudi à 11h'], ['2', 'Antony chez DAY BY DAY, vendredi 11 ']], label_method: :second, value_method: :second %>
 
-            <div class="input-group flex-nowrap py-2 hide d-none">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Lieu</span>
-          </div>
-        <%= select_tag "customer[lieu]", raw("<option>Antony</option> <option>Verrière-le-Buisson</option>"), class:'form-control require-activation', :prompt => 'Choissisez votre lieu de livraison', required: true%>
-        </div>
+
       
       
 
-      <%= f.submit:"COMMANDER", class: 'btn btn-success float-right mt-2'%>   
+      <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
+      <% end %>
     </div>
 
     <div class='col-12 col-md-4'> 
+      <div class='cart border'>
+        <h3 class="text-center my-2">Ma commande</h3>
+        
+        <div class='d-flex justify-content-between mx-2'>
+          <p>Healing Bento Box</p>
+          <div class="quantities"></div>
+        </div>
+        <div class='d-flex justify-content-between mx-2'>
+          <p>Prix TTC</p>         
+          <div class="price"></div>
+        </div>
+        <div class='d-flex justify-content-between mx-2'>
+          <p>Jour de la livraison</p>         
+          <div class="day"></div>
+        </div>
+        <div class='d-flex justify-content-between mx-2'>
+          <p>Lieu de la livraison</p>         
+          <div class="delivery_place"></div>
+        </div>
 
-    <% if f.input :delivery == 0%>
-      <%=  f.input :price == 16%>€   
-      <% else %>
-      <%= f.input :price == 13 %>€
-    <% end %>
+      </div>
 
-          <figure class="figure">
+   <!--  <figure class="figure">
 
 
         <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
-      </figure>
-    </div>
+      </figure>-->
+    </div> 
   </div>
-      <% end %>
    
 

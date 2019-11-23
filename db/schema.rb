@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_124238) do
     t.integer "quantities"
     t.string "day"
     t.boolean "delivery"
+    t.string "delivery_place"
     t.integer "price"
     t.bigint "customer_id"
     t.datetime "created_at", null: false
