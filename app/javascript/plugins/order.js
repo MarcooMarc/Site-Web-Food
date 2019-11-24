@@ -43,17 +43,3 @@ window.onload= function (){
 		})
 
 }
-
-
-window.onload2= function (){
-
-	let seat = 0
-	const trigger = document.getElementById('booking_seat');	  
-	trigger.addEventListener('change', () => {
-		let seat = parseInt(document.querySelector(".booking_seat input").value)
-		document.querySelector(".seat").innerHTML = seat.toString()
-
-	})
-
-
-}
