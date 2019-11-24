@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     customer = Customer.find_or_create(params[:customer][:name], params[:customer][:surname], params[:customer][:email],
     params[:customer][:phonenumber], params[:customer][:adress], params[:customer][:city], params[:customer][:postalcode])
     @order.customer = customer
-    @order.delivery = params[:order][:delivery] == "0"
+    @order.delivery = params[:order][:delivery] == "1"
     @order.price = params[:order][:quantities].to_i * 13 + params[:order][:delivery].to_i * 3
     @order.save
 

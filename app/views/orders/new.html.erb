@@ -14,7 +14,7 @@
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Livraison</span>
         </div>
-    <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [['0', 'Oui'], ['1', 'Non']], label: false, label_method: :second, value_method: :first%>
+    <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [['0', 'Non'], ['1', 'Oui']], label: false, label_method: :second, value_method: :first%>
     </div>
 
     <div class="input-group flex-nowrap py-1">

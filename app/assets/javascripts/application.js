@@ -9,7 +9,7 @@ window.onload= function (){
 		  		choice.forEach((event) => {
 		  			event.classList.remove('d-none');
 		  		})
-		  		let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13 + 3
+		  		let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13 
 				document.querySelector(".price").innerHTML = cartValue.toString()
 			} else if (trigger.value == "1") { 
 		  		choice.forEach((event) => {
@@ -18,7 +18,7 @@ window.onload= function (){
 		  				event.required = false
 		  			})
 		  		})
-				let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13
+				let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13  + 3
 				document.querySelector(".price").innerHTML = cartValue.toString()
 			}
 		})
