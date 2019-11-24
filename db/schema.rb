@@ -70,7 +70,10 @@ ActiveRecord::Schema.define(version: 2019_11_23_124238) do
     t.string "photo3_home_page"
     t.string "photo_commande_index"
     t.string "photo_commande_new"
+    t.string "photo_parcours"
+    t.string "photo_contact"
     t.text "commander"
+    t.text "parcours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,7 +6,7 @@
     <%= simple_form_for @booking do |f|%>
     <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }%>
 
-       <div class="input-group flex-nowrap">
+       <div class="input-group flex-nowrap py-2">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Livraison</span>
         </div>
@@ -44,7 +44,6 @@
 
 
     <%= f.submit :"Participer", class: 'btn btn-success float-right mt-2'%>   
-    <% end %>
   </div>
 
   <div class='col-12 col-md-4 '> 
@@ -62,7 +61,8 @@
               <div class='p-2'>Prix TTC</div>    
              
               <div class="d-flex py-2">
-               <div class="price"></div>
+               <div class="price">
+               </div>
                   <div>€</div>
                 </div>     
               </div>
@@ -75,3 +75,4 @@
         </div>
       </div> 
     </div>
+    <% end %>
