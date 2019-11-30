@@ -3,18 +3,18 @@
 <div class='row align-items-center'>
   <div class='col-12 col-md-8 pr-30'>
     <%= simple_form_for @order do |f|%>
-     <div class="input-group flex-nowrap py-2">
+     <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Quantités</span>
         </div>
       <%= f.input :quantities,wrapper_html: { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
     </div>
 
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Livraison</span>
         </div>
-    <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [['0', 'Non'], ['1', 'Oui']], label: false, label_method: :second, value_method: :first%>
+    <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [[false, 'Non'], [true, 'Oui']], label: false, label_method: :second, value_method: :first%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
@@ -26,11 +26,11 @@
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text hide d-none" id="addon-wrapping">Lieu de livraison</span>
+           <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
-      <i class="text-muted d-none hide">* Les livraisons sont à récupérer à partir de 11h</i>
+      <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
     <div class="input-group flex-nowrap pt-3 pb-1">
       <div class="input-group-prepend">
@@ -60,25 +60,25 @@
     <%= text_field_tag "customer[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **', required: true%>
     </div>
 
-    <div class="input-group flex-nowrap py-1 hide d-none">
+    <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Adresse</span>
       </div>
-    <%= text_field_tag "customer[adress]", "", class:'form-control require-activation', placeholder: 'adresse', required: true%>
+    <%= text_field_tag "customer[adress]", "", class:'form-control require-activation', placeholder: 'adresse'%>
     </div>
 
-    <div class="input-group flex-nowrap py-1 hide d-none">
+    <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Code Postal</span>
       </div>
-    <%= text_field_tag "customer[postalcode]", "", class:'form-control require-activation', placeholder: 'code postal', required: true%>
+    <%= text_field_tag "customer[postalcode]", "", class:'form-control require-activation', placeholder: 'code postal'%>
     </div>
 
-    <div class="input-group flex-nowrap py-1 hide d-none">
+    <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Ville</span>
       </div>
-    <%= text_field_tag "customer[city]", "", class:'form-control require-activation', placeholder: 'ville', required: true%>
+    <%= text_field_tag "customer[city]", "", class:'form-control require-activation', placeholder: 'ville'%>
     </div>     
 
   <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
@@ -86,7 +86,7 @@
 
   </div>
 
-  <div class='col-12 col-md-4 '> 
+  <div class='col-12 col-md-4 h-100 d-flex justify-content-between flex-column'> 
     <div class="d-flex align-content-between flex-column ">
       <div class='d-none hide'>
         <div class='cart border d-block'>
@@ -100,10 +100,13 @@
             <span class='p-2'>Jour de la livraison</span>         
             <div class="day p-2"></div>
           </div>
-          <div class='d-flex justify-content-between mx-3'>
-            <div class='p-2'>Lieu de la livraison</div>         
-            <div class="delivery_place p-2"></div>
+          <div class="d-none hide2">
+            <div class='d-flex justify-content-between mx-3'>
+              <div class='p-2'>Lieu de la livraison</div>         
+              <div class="delivery_place p-2"></div>
+            </div>
           </div>
+         
           <hr>
           <div class=' d-flex justify-content-between mx-3 my-3'>
             <div class='p-2'><strong>Prix TTC</strong></div>    
@@ -116,8 +119,8 @@
           </div>
         </div>
       </div>
-      <div class="figure py-2">
-        <%= image_tag "bento.png",class:"d-bloc"%> 
+      <div class="figure py-2 responsive">
+        <%= image_tag "test_webnew.png",class:"d-bloc"%> 
         <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
       </div>
     </div> 

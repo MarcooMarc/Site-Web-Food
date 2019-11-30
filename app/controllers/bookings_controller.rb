@@ -39,6 +39,7 @@ class BookingsController < ApplicationController
   def workshop_params
     params.require('booking').permit(:seat, :workshop_id)
     params.require('booking').permit(:price, :workshop_id)
+    params.require('booking').permit(:title, :workshop_id)
   end
 
   def participant_params

@@ -45,13 +45,16 @@ html {
     padding-right: 2rem !important;
     padding-left: 3rem !important;
 	}
-}
-
-@media (min-width: 992px) {
 .navbar-expand-lg .navbar-collapse {
     display: -ms-flexbox!important;
     display: flex!important;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
- 	}
+    }
+}
+
+@media (min-width: 640px) {
+figure {
+    display: none;
+    }
 }
