@@ -1,14 +1,14 @@
-<h1 class="mt-4">Valider votre inscription</h1>
+<h1 class="mt-2">Valider votre inscription</h1>
 
 <div class='row'>
-  <div class='col-12 col-md-8'>
+  <div class='col-12 col-md-8 my-2'>
     
     <%= simple_form_for @booking do |f|%>
     <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }%>
 
-       <div class="input-group flex-nowrap py-2">
+       <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
-           <span class="input-group-text" id="addon-wrapping">Livraison</span>
+           <span class="input-group-text" id="addon-wrapping">Places</span>
         </div>
     <%= f.input :seat, wrapper_html:  { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'Place'%>
     </div>
@@ -45,7 +45,7 @@
     <%= f.submit :"Participer", class: 'btn btn-success float-right my-3'%>   
   </div>
  
-   <div class='col-12 col-md-4 h-100 d-flex justify-content-around flex-column'> 
+   <div class='col-12 col-md-4 d-flex justify-content-around flex-column'> 
     <div class="d-flex align-content-between flex-column">
       <div class='d-none hide4'>
         <div class='cart border d-block mt-4'>
@@ -56,7 +56,7 @@
             <div class="p-2">test</div>
           </div>
           <div class='d-flex justify-content-between mx-3'>
-            <span  class='p-2'>Mes paces</span>
+            <span  class='p-2'>Mes places</span>
             <div class="seat p-2"></div>
           </div>
                    

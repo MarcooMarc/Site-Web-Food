@@ -1,13 +1,12 @@
-
-<div class='row align-items-center'>
-  <div class='col-12 col-md-8 pb-0'>
-  <h1>Lorem Ipsum</h1>
-    <div class='mb-8'>
-      <div class='pb-0'>
+<h1 class='mt-2'>Lorem Ipsum</h1>
+<div class='row'>
+  <div class='col-12 col-md-8 my-2 '>
+    <div>
+      <div>
 	      <%@home.each do |home| %>
   	    <%=break_line(home.commander)%>
       </div> 
-      <div class='my-4'>
+      <div>
 		    <%=  link_to "COMMANDER",macommande_path, :class =>'btn btn-success float-right w-25 mb-3 py-1'%>
       </div>
     </div>
@@ -25,4 +24,5 @@
 	  <%end%>
 
 </div>
+
 
