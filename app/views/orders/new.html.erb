@@ -21,14 +21,14 @@
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Jour de récupératin</span>
         </div>
-    <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']],include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :second %>
+    <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']],include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
     <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
