@@ -8,6 +8,10 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @workshop_id = params[:workshop_id]
+    workshop_price = Workshop.find(@workshop_id).price
+    workshop = Workshop.find(@workshop_id).title
+    @booking.price = workshop_price
+    @booking.workshop = workshop   
   end
 
   def create
@@ -19,7 +23,7 @@ class BookingsController < ApplicationController
     params[:trainee][:surname], params[:trainee][:phonenumber])
     @booking.trainee = trainee
     @booking.workshop = workshop_title
-    @booking.price = workshop_price
+    @booking.price = params[:booking][:seat].to_i * workshop_price.to_i
     @booking.seat = params[:booking][:seat]
     @booking.save
     flash[:notice] = "Votre atelier est validée vous allez recevoir un e-mail"
@@ -27,7 +31,15 @@ class BookingsController < ApplicationController
     redirect_to root_path
   end
 
-
+  # def counter
+  #   @Workshop =  Workshop.find(params[:seat])
+  #   @Workshop = total_seat
+  #   @booking.seat =  params[:booking][:seat]
+  #   @booking.seat = seat
+  #   total_seat -= seat
+  #   raise
+  #   total_seat.save
+  # end
 
   def destroy
     @booking = Booking.find(params[:id])
@@ -39,7 +51,7 @@ class BookingsController < ApplicationController
   def workshop_params
     params.require('booking').permit(:seat, :workshop_id)
     params.require('booking').permit(:price, :workshop_id)
-    params.require('booking').permit(:title, :workshop_id)
+    params.require('booking').permit(:workshop, :workshop_id)
   end
 
   def participant_params

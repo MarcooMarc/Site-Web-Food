@@ -4,46 +4,26 @@ window.onload= function (){
 		let cartValue = 0
 		const trigger = document.getElementById('order_delivery');	  
 		const choice = document.querySelectorAll('.hide');
-		const choice2 = document.querySelectorAll('.hide2');
-		const choice3 = document.querySelectorAll('.hide3');
-
-	 	trigger.addEventListener('change', () => { 
-			if (trigger.value == "false") {
-		  		choice.forEach((event) => {
-		  			event.classList.remove('d-none');
-		  		})
-		  		choice2.forEach((event) => {
-		  			event.classList('d-none');
-		  		})
-		  		choice3.forEach((event) => {
-		  			event.classList('d-none');
-		  		})
-		  		let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13 
-				document.querySelector(".price").innerHTML = cartValue.toString()
-			} else if (trigger.value == "true") { 
-		  		choice.forEach((event) => {
-		  			event.classList.remove('d-none');
-		  		})
-		  		choice2.forEach((event) => {
-		  			event.classList.remove('d-none');
-		  		})
-		  		choice3.forEach((event) => {
-		  			event.classList.remove('d-none');
-		  	
-		  			document.querySelectorAll('.require-activation').forEach((event) => {
-		  				event.required = false
-		  			})
-		  		})
-				let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13  + 3
-				document.querySelector(".price").innerHTML = cartValue.toString()
-			}
-		})
+		const cartBorder = document.querySelector('.cart.border');
+		const jourRecuperation = document.querySelectorAll('.jour-recuperation');
+		const lieuLivraison = document.querySelectorAll('.lieu-livraison');
+		let choice3 = document.querySelectorAll('.hide3');
+		const prixLivraison = document.querySelector('.price');
+			 	
 
 		let quantities = 0
-		const trigger2 =document.getElementById('order_quantities')
-		trigger2.addEventListener('change', () => {
+		const orderQuantities =document.getElementById('order_quantities')
+
+		orderQuantities.addEventListener('change', () => {
 			let quantitiesValue = parseInt(document.querySelector(".order_quantities input").value)
 			document.querySelector(".quantities").innerHTML = quantitiesValue.toString()
+
+			let cartValue = parseInt(document.querySelector(".order_quantities input").value) * 13 
+					document.querySelector(".price").innerHTML = cartValue.toString()
+			if (orderQuantities.value !== null) {
+				cartBorder.classList.remove('d-none');
+				cartBorder.classList.add('d-block');
+			}
 			})
 
 		let day = "0"
@@ -59,6 +39,49 @@ window.onload= function (){
 			let deliveryPlace = document.getElementById('order_delivery_place').value
 			document.querySelector(".delivery_place").innerHTML = deliveryPlace
 			})
+
+		 	trigger.addEventListener('change', () => { 
+				if (trigger.value === "0") {
+			  		choice.forEach((event) => {
+			  			event.classList.add('d-none');
+			  		})
+			  		lieuLivraison.forEach((event) => {
+			  			event.classList.add('d-none');
+			  		})
+			  		choice3.forEach((event) => {
+			  			event.classList.add('d-none');
+			  		})		  			
+
+				  		document.querySelectorAll('.require-activation').forEach((event) => {
+				  			event.required = false;
+			  			})
+
+			  		cartValue = parseInt(document.querySelector('.price').innerText) - 3
+			  		document.querySelector(".price").innerHTML = cartValue.toString()	
+
+				} 
+				else if (trigger.value === "1") { 
+			  		choice.forEach((event) => {
+			  			event.classList.remove('d-none');
+			  		})
+			  		lieuLivraison.forEach((event) => {
+			  			event.classList.remove('d-none');
+			  		})
+			  		choice3.forEach((event) => {
+			  			event.classList.remove('d-none');
+			  		})
+
+			  			document.querySelectorAll('.require-activation').forEach((event) => {
+			  				event.required = true;
+			  			})
+					
+					cartValue = parseInt(document.querySelector('.price').innerText) + 3
+			  		document.querySelector(".price").innerHTML = cartValue.toString()
+					
+				}
+			})
+
+
 	 
 	} else(document.querySelector('booking_seat'))
 	{
@@ -72,6 +95,10 @@ window.onload= function (){
 		  		})
 			let seat = parseInt(document.querySelector(".booking_seat input").value)
 			document.querySelector(".seat").innerHTML = seat.toString()
+
+			let price = parseInt(document.querySelector(".booking_seat input").value)
+			* document.querySelector(".workshopprice").innerText
+			document.querySelector(".price").innerHTML = price.toString()
 		})
 	 }
 }

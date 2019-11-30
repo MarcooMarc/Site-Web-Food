@@ -1,36 +1,36 @@
 <h1 class="mt-2">Passer votre commande</h1>
+<div class='row'>
 
-<div class='row align-items-center' >
-  <div class='col-12 col-md-8  my-2'>
+  <div class='col-12 col-md-8 float-left text-justify my-2'>
     <%= simple_form_for @order do |f|%>
-     <div class="input-group flex-nowrap mb-1">
+    <div class="input-group flex-nowrap mb-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Quantités</span>
         </div>
-      <%= f.input :quantities,wrapper_html: { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
+      <%= f.input :quantities, wrapper_html: { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Livraison</span>
         </div>
-    <%= f.input :delivery,wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [[false, 'Non'], [true, 'Oui']], label: false, label_method: :second, value_method: :first%>
+    <%= f.input :delivery, wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [[0, 'Non'], [1, 'Oui']], include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :first%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text" id="addon-wrapping">Jour de livraison</span>
+           <span class="input-group-text" id="addon-wrapping">Jour de récupératin</span>
         </div>
-    <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false,  label_method: :second, value_method: :second %>
+    <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']],include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :second %>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']],include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :second %>
     </div> 
-      <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
+    <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
     <div class="input-group flex-nowrap pt-3 pb-1">
       <div class="input-group-prepend">
@@ -82,47 +82,49 @@
     </div>     
 
   <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
-  <% end %>
-
   </div>
 
   <div class='col-12 col-md-4 h-100 d-flex justify-content-between flex-column'> 
     <div class="d-flex align-content-between flex-column ">
-      <div class='d-none hide'>
-        <div class='cart border d-block'>
-          <h4 class="text-center my-3">Ma commande</h4>
-          
+      <div class='cart border d-none'>
+        <h4 class="text-center my-3">Ma commande</h4>
+        
+        <div class='d-flex justify-content-between mx-3'>
+          <span  class='p-2'>Healing Bento Box</span>
+          <div class="quantities p-2"></div>
+        </div>
+
+        <div class='jour-recuperation'>
           <div class='d-flex justify-content-between mx-3'>
-            <span  class='p-2'>Healing Bento Box</span>
-            <div class="quantities p-2"></div>
-          </div>
+            <span class='p-2'>Jour de la récupération</span>         
+          <div class="day p-2"></div>
+        </div>                      
+
+        <div class="lieu-livraison d-none">
           <div class='d-flex justify-content-between mx-3'>
-            <span class='p-2'>Jour de la livraison</span>         
-            <div class="day p-2"></div>
+            <div class='p-2'>Lieu de la livraison</div>         
+            <div class="delivery_place p-2"></div>
           </div>
-          <div class="d-none hide2">
-            <div class='d-flex justify-content-between mx-3'>
-              <div class='p-2'>Lieu de la livraison</div>         
-              <div class="delivery_place p-2"></div>
-            </div>
-          </div>
+        </div>
+       
+        <hr>
+        <div class=' d-flex justify-content-between mx-3 my-3'>
+          <div class='p-2'><strong>Prix TTC</strong>
+          </div>    
          
-          <hr>
-          <div class=' d-flex justify-content-between mx-3 my-3'>
-            <div class='p-2'><strong>Prix TTC</strong></div>    
-           
-            <div class="d-flex py-2">
-              <div class="price"></div>
-                <div>€</div>
-              </div>     
-            </div>
+          <div class="d-flex py-2">
+            <div class="price"></div>
+              <div>€</div>
+            </div>     
           </div>
         </div>
       </div>
+
       <div class="figure py-2 responsive">
-        <%= image_tag "test_webnew.png",class:"d-bloc"%> 
+        <%= image_tag "test_webnew.png",class:"d-bloc w-100"%> 
         <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
       </div>
     </div> 
   </div>
-
+  <% end %>
+</div>
