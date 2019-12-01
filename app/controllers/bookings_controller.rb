@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
   end
 
   # def counter
+  #   @workshop_id = params[:booking][:workshop_id]
   #   @Workshop =  Workshop.find(params[:seat])
   #   @Workshop = total_seat
   #   @booking.seat =  params[:booking][:seat]
