@@ -12,6 +12,11 @@ window.onload= function (){
 		let choice3 = document.querySelectorAll('.hide3');
 		const prixLivraison = document.querySelector('.price');
 		
+const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
+const btnValueComplete = document.querySelectorAll('.workshopComplete');
+const trigger1 = (document.querySelector(".number").innerHTML
+
+
 
 		let quantities = 0
 		const orderQuantities =document.getElementById('order_quantities')
@@ -81,7 +86,21 @@ window.onload= function (){
 			  		document.querySelector(".price").innerHTML = cartValue.toString()
 					
 				}
+				if (trigger1.value === "0 places") { 
+	  	btnValueComplete.forEach((event) => {
+	  		event.classList.remove('d-none');
+	  	})	
+	  	btnValueUncomplete.forEach((event) => {
+			event.classList.add('d-none');
+		})
+	} 
+	else if (trigger1.value != "0 places") { 
+
+	}
+}
 			})
+
+
 
 		 
 	} else(document.querySelector('booking_seat'))
@@ -104,22 +123,4 @@ window.onload= function (){
 	 }
 }
 
-
-
-// const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
-// const btnValueComplete = document.querySelectorAll('.workshopComplete');
-// const trigger1 = (document.querySelector(".number").innerHTML
-
-// function workshop(event) => { 
-// 	if (trigger1.value === "0 places") { 
-// 	  	btnValueComplete.forEach((event) => {
-// 	  		event.classList.remove('d-none');
-// 	  	})	
-// 	  	btnValueUncomplete.forEach((event) => {
-// 			event.classList.add('d-none');
-// 		})
-// 	} 
-// 	else if (trigger1.value != "0 places") { 
-
-// 	}
-// }
+	
