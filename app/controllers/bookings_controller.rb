@@ -26,22 +26,22 @@ class BookingsController < ApplicationController
     @booking.workshop = workshop_title
     @booking.price = params[:booking][:seat].to_i * workshop_price.to_i
     @booking.seat = params[:booking][:seat]
-    @booking.save
-    flash[:notice] = "Votre atelier est validée vous allez recevoir un e-mail"
-    
-    redirect_to root_path
+    @booking.save  
+    redirect_to workshops_path
+    workshop = Workshop.find(@workshop_id)
+    seats = params[:booking][:seat].to_i
+    update_available_seat(workshop, seats)
   end
 
-  # def counter
-  #   @workshop_id = params[:booking][:workshop_id]
-  #   @Workshop =  Workshop.find(params[:seat])
-  #   @Workshop = total_seat
-  #   @booking.seat =  params[:booking][:seat]
-  #   @booking.seat = seat
-  #   total_seat -= seat
-  #   raise
-  #   total_seat.save
-  # end
+  def update_available_seat(workshop, seats)
+    if workshop.seat < seats 
+      flash[:alert] = "Désolé, il n'y a plus assez de place."
+    else
+      workshop.seat -= seats
+      workshop.save!
+      flash[:notice] = "Votre atelier est validée vous allez recevoir un e-mail"
+    end
+  end
 
   def destroy
     @booking = Booking.find(params[:id])
