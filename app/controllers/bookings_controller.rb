@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @home = Home.all
     @booking = Booking.new
     @workshop_id = params[:workshop_id]
     workshop_price = Workshop.find(@workshop_id).price

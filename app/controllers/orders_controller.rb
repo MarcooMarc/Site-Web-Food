@@ -2,10 +2,12 @@ class OrdersController < ApplicationController
   def index
     @order = Order.all
     @home = Home.all
+
   end
 
   def new
     @order = Order.new
+    @home = Home.all
   end
 
   def create

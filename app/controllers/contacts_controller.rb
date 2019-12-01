@@ -1,12 +1,8 @@
 class ContactsController < ApplicationController
-  def index
-    @home = Home.all
-  end
-    
 
   def new
     @contact = Contact.new
-    @home = Home.new
+    @home = Home.all
   end
 
   def create
