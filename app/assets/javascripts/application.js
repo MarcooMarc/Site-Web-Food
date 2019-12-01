@@ -12,12 +12,6 @@ window.onload= function (){
 		let choice3 = document.querySelectorAll('.hide3');
 		const prixLivraison = document.querySelector('.price');
 		
-const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
-const btnValueComplete = document.querySelectorAll('.workshopComplete');
-const trigger1 = (document.querySelector(".number").innerHTML
-
-
-
 		let quantities = 0
 		const orderQuantities =document.getElementById('order_quantities')
 
@@ -31,7 +25,7 @@ const trigger1 = (document.querySelector(".number").innerHTML
 				cartBorder.classList.remove('d-none');
 				cartBorder.classList.add('d-block');
 			}
-			})
+		})
 
 		let day = "0"
 		const trigger3 =document.getElementById('order_day')
@@ -86,23 +80,9 @@ const trigger1 = (document.querySelector(".number").innerHTML
 			  		document.querySelector(".price").innerHTML = cartValue.toString()
 					
 				}
-				if (trigger1.value === "0 places") { 
-	  	btnValueComplete.forEach((event) => {
-	  		event.classList.remove('d-none');
-	  	})	
-	  	btnValueUncomplete.forEach((event) => {
-			event.classList.add('d-none');
-		})
-	} 
-	else if (trigger1.value != "0 places") { 
-
-	}
-}
+				
 			})
-
-
-
-		 
+	 
 	} else(document.querySelector('booking_seat'))
 	{
 		let seat = 0
@@ -123,4 +103,20 @@ const trigger1 = (document.querySelector(".number").innerHTML
 	 }
 }
 
-	
+
+// const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
+// const btnValueComplete = document.querySelectorAll('.workshopComplete');
+// const trigger1 = (document.querySelector(".number").innerHTML
+
+// if (trigger1.value === "0 places") { 
+// 	  	btnValueComplete.forEach((event) => {
+// 	  		event.classList.remove('d-none');
+// 	  	})	
+// 	  	btnValueUncomplete.forEach((event) => {
+// 			event.classList.add('d-none');
+// 		})
+// 	} 
+// 	else if (trigger1.value != "0 places") { 
+
+// 	}
+// }
