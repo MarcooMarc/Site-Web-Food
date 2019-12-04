@@ -1,13 +1,13 @@
 <h1 class="mt-2">Mon parcours</h1>	
 
-<div class='row d-bloc '>
+<div class='row d-bloc my-2 '>
   <%@home.each do |home|%>
 
 	<div class='col-md-8 col-lg-8 float-left my-2'>
 	  <%=break_line(home.parcours)%>	
 	</div>
 
-	<div class='col-sm-4 my-2'>
+	<div class='col-sm-4 my-2 poulpe'>
 		 <%= cl_image_tag home.photo_parcours, class:"card-img-top"%>
 
 		

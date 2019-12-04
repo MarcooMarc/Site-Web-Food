@@ -12,7 +12,7 @@
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text" id="addon-wrapping">Livraison</span>
+           <span class="input-group-text" id="addon-wrapping">Livraison*</span>
         </div>
     <%= f.input :delivery, wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [[0, 'Non'], [1, 'Oui']], include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :first%>
     </div>
@@ -27,7 +27,7 @@
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
+           <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison*</span>
          </div>
       <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
@@ -120,12 +120,13 @@
           </div>
         </div>
       </div>
-
-      <div class="figure py-2 responsive">
-        <% @home.each do |home| %>
-        <%= cl_image_tag home.photo_commande_new, class:'card-img h-100'%>
-        <% end %>
-        <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
+      <div class="poulpe">      
+        <div class="figure py-2 responsive">
+          <% @home.each do |home| %>
+          <%= cl_image_tag home.photo_commande_new, class:'card-img h-100 '%>
+          <% end %>
+          <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
+        </div>
       </div>
     </div> 
   </div>
