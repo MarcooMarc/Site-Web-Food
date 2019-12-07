@@ -1,3 +1,5 @@
+.row:before, .row:after {display: none !important;}
+
 textarea.form-control {
     height: 30vh !important;
 }
