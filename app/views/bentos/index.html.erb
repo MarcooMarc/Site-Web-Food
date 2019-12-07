@@ -2,22 +2,18 @@
 
 <div class="card-deck my-2">
 <%@bento.each do |bento|%>
-  <div class="col-lg-4 pb-3">
-      
-     <div class="card mx-0">
-
-
-      <%= cl_image_tag bento.photo, class:"card-img-top"%>
-        <div class="card-body">
-          <h5 class="card-title"><%=bento.title%></h5>
-          <p class="card-text"><%=bento.description%></style></p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><%=bento.date%></small>
-        </div>
+  <div class="col-lg-4 pb-3"> 
+    <div class="card mx-0">
+    <%= cl_image_tag bento.photo, class:"card-img-top"%>
+      <div class="card-body">
+        <h5 class="card-title"><%=bento.title%></h5>
+        <p class="card-text"><%=bento.description%></style></p>
       </div>
+      <div class="card-footer">
+        <small class="text-muted"><%=bento.date%></small>
+      </div>
+    </div>
   </div>
-  
-<%end%>
+  <%end%>
 </div>
 

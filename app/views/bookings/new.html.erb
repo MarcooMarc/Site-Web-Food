@@ -43,7 +43,6 @@
 
 
     <%= f.submit :"Participer", class: 'btn btn-success float-right my-3'%>   
-    <% end %>
   </div>
  
   <div class='col-12 col-md-4 h-100 d-flex justify-content-between flex-column'> 
@@ -81,13 +80,10 @@
           </div>
         </div>
       </div>
-      <div class="poulpe">      
-        <div class="figure py-2 responsive">
-          <% @home.each do |home| %>
-          <%= cl_image_tag home.photo_commande_new, class:'card-img h-100 '%>
-          <% end %>
-          <figcaption class="figure-caption text-right">Bento Healthy Eating</figcaption>
-        </div>
-      </div>      
+      <div class="figure py-2 responsive">
+        <%= image_tag "test_webnew.png",class:"d-bloc w-100"%> 
+        <figcaption class="figure-caption text-right">Bento Love Origin Kitchen</figcaption>
+      </div>
     </div> 
   </div>
+  <% end %>

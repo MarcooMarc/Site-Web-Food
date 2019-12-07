@@ -2,22 +2,22 @@
 
 <div class='row d-bloc'>
   <div class='col-md-8 col-lg-8 float-left text-justify my-2'>
-	<%= simple_form_for @contact do |f| %>
-
-	<%= f.input :name, class:'form-control', placeholder: 'Nom', label:false%>
-	<%= f.input :surmane, class:'form-control', placeholder: 'Prénom', label:false %>
-	<%= f.input :email, class:'form-control', placeholder: 'monadresse@domaine.fr',label:false %>
-	<%= f.input :message, class:'h-100 form-control', placeholder: 'Poser votre question',label:false%>
-	<%= f.submit :"ENVOYER", class: 'btn btn-success float-right my-2' %>
+  	<%= simple_form_for @contact do |f| %>
+    	<%= f.input :name, class:'form-control', placeholder: 'Nom', label:false%>
+    	<%= f.input :surmane, class:'form-control', placeholder: 'Prénom', label:false %>
+    	<%= f.input :email, class:'form-control', placeholder: 'monadresse@domaine.fr',label:false %>
+    	<%= f.input :message, class:'h-100 form-control', placeholder: 'Poser votre question',label:false%>
+    
+    	<%= f.submit :"ENVOYER", class: 'btn btn-success float-right my-2' %>
   </div>
 	<% end %>
   <div class='col-sm-4'> 
     <div class="poulpe">
      <div class="figure py-2 responsive">
-      <% @home.each do |home| %>
-        <%= cl_image_tag home.photo_contact, class:'card-img h-100'%>
-      <%end %>
-        <figcaption class="figure-caption text-right">Bento Healthy Eating</figcaption>
+       <% @home.each do |home| %>
+         <%= cl_image_tag home.photo_contact, class:'card-img h-100'%>
+       <%end %>
+       <figcaption class="figure-caption text-right">Bento Healthy Eating</figcaption>
      </div>
     </div>
   </div>
