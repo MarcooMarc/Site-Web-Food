@@ -1,4 +1,4 @@
-@import "bootstrap/bootstrap.scss"
+@import "components/index.scss"
 
 textarea.form-control {
     height: 30vh !important;
