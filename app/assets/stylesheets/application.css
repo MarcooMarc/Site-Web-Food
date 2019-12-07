@@ -1,4 +1,4 @@
-.row:before, .row:after {width:0px; height:0px;}
+@import "bootstrap/bootstrap.scss"
 
 textarea.form-control {
     height: 30vh !important;
@@ -61,4 +61,3 @@ html {
     display: none;
     }
 }
-
