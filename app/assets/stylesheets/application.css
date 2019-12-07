@@ -1,4 +1,4 @@
-.row:before, .row:after {display: none !important;}
+.row:before, .row:after {width: 0px; height: 0px;}
 
 textarea.form-control {
     height: 30vh !important;
