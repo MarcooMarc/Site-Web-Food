@@ -5,13 +5,9 @@
     
     <%= simple_form_for @booking do |f|%>
 
-    <div class="input-group flex-nowrap pb-2">
-        <div class="input-group-prepend">
-           <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text p-0 w-100 bg-light text-left'}%>
-        </div>
+   
+    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text p-0 w-100 bg-light text-left'}%>
 
-    
-     </div>
        <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
            <span class="input-group-text bg-light text-left" id="addon-wrapping">Places</span>
@@ -37,7 +33,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text bg-light text-left" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "trainee[email]", "", class:'input-group-text w-100', placeholder: 'mon.email@email.com', required: true%>
+    <%= text_field_tag "trainee[email]", "", class:'input-group-text', placeholder: 'mon.email@email.com', required: true%>
     </div>
 
 
