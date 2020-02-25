@@ -3,7 +3,7 @@
 
   <div class='col-12 col-md-8 float-left text-justify my-2'>
     <%= simple_form_for @order do |f|%>
-    <div class="input-group flex-nowrap mb-1">
+    <div class="input-group flex-nowrap mb-1 h-25">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Quantités</span>
         </div>
@@ -12,7 +12,7 @@
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text" id="addon-wrapping">Livraison</span>
+           <span class="input-group-text form-control" id="addon-wrapping">Livraison</span>
         </div>
     <%= f.input :delivery, wrapper_html: { class: 'input-group-text form p-0 w-100' }, :as => :select, collection: [[0, 'Non'], [1, 'Oui']], include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :first%>
     </div>
