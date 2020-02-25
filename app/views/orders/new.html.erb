@@ -7,28 +7,28 @@
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Quantités</span>
         </div>
-      <%= f.input :quantities, wrapper_html: { class: 'input-group-text text-left bg-light w-100p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
+      <%= f.input :quantities, wrapper_html: { class: 'form-controle p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Livraison</span>
         </div>
-    <%= f.input :delivery, wrapper_html: { class: 'input-group-text text-left bg-light w-100 p-0 w-100' }, :as => :select, collection: [[0, 'Non'], [1, 'Oui']], include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :first%>
+    <%= f.input :delivery, wrapper_html: { class: 'form-controle p-0 w-100' }, :as => :select, collection: [[0, 'Non'], [1, 'Oui']], include_blank: false, include_hidden: false, label: false, label_method: :second, value_method: :first%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Jour de récupération</span>
         </div>
-    <%= f.input :day, wrapper_html: { class: 'input-group-text text-left bg-light w-100p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
+    <%= f.input :day, wrapper_html: { class: ' form-controle p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text text-left bg-light w-100 p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'form-controle p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
     <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
@@ -78,7 +78,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Ville</span>
       </div>
-    <%= text_field_tag "customer[city]", "", class:'input-group-text text-left bg-light w-100 require-activation', placeholder: 'ville'%>
+    <%= text_field_tag "customer[city]", "", class:'input-group-text text-left bg-light w-100require-activation', placeholder: 'ville'%>
     </div>     
 
   <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
