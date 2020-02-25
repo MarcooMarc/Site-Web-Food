@@ -3,11 +3,11 @@
 
   <div class='col-12 col-md-8 float-left text-justify my-2'>
     <%= simple_form_for @order do |f|%>
-    <div class="input-group flex-nowrap mb-1 h-25">
+    <div class="input-group flex-nowrap mb-1">
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Quantités</span>
         </div>
-      <%= f.input :quantities, wrapper_html: { class: 'input-group-text form p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
+      <%= f.input :quantities, wrapper_html: { class: 'p-0 w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'quantité'%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
@@ -19,7 +19,7 @@
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
-           <span class="input-group-text" id="addon-wrapping">Jour de récupératin</span>
+           <span class="input-group-text" id="addon-wrapping">Jour de récupération</span>
         </div>
     <%= f.input :day, wrapper_html: { class: 'input-group-text form p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
     </div>
