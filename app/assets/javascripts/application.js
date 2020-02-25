@@ -106,9 +106,6 @@ window.onload= function (){
 
 const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
 const btnValueComplete = document.querySelectorAll('.workshopComplete');
-const trigger1 = (document.querySelector(".number").innerHTML
 
-btnValueUncomplete.forEach((event) => {
-	if 
-})
+
 
