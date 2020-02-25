@@ -21,14 +21,14 @@
         <div class="input-group-prepend">
            <span class="input-group-text" id="addon-wrapping">Jour de récupération</span>
         </div>
-    <%= f.input :day, wrapper_html: { class: 'form-control p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
+    <%= f.input :day, wrapper_html: { class: 'p-0 w-100' }, as: :select, collection: [['0','Mercredi'], ['1', 'Jeudi'], ['2', 'Vendredi']], label: false, label_method: :second, value_method: :second %>
     </div>
 
     <div class="input-group flex-nowrap py-1">
         <div class="input-group-prepend">
            <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, wrapper_html: { class: 'form-control p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'p-0 hide3 d-none w-100' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
     <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
@@ -36,49 +36,49 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Prénom</span>
       </div>
-    <%= text_field_tag "customer[surname]","", class:'form-control', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "customer[surname]","", class:'', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Nom</span>
       </div>
-    <%= text_field_tag "customer[name]", "", class:'form-control', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "customer[name]", "", class:'', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "customer[email]", "", class:'form-control', placeholder: 'mon.email@email.com', required: true%>
+    <%= text_field_tag "customer[email]", "", class:'', placeholder: 'mon.email@email.com', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-1">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Mobile</span>
       </div>
-    <%= text_field_tag "customer[phonenumber]", "", class:'form-control', placeholder: '06 ** ** ** **', required: true%>
+    <%= text_field_tag "customer[phonenumber]", "", class:'', placeholder: '06 ** ** ** **', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Adresse</span>
       </div>
-    <%= text_field_tag "customer[adress]", "", class:'form-control require-activation', placeholder: 'adresse'%>
+    <%= text_field_tag "customer[adress]", "", class:' require-activation', placeholder: 'adresse'%>
     </div>
 
     <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Code Postal</span>
       </div>
-    <%= text_field_tag "customer[postalcode]", "", class:'form-control require-activation', placeholder: 'code postal'%>
+    <%= text_field_tag "customer[postalcode]", "", class:' require-activation', placeholder: 'code postal'%>
     </div>
 
     <div class="input-group flex-nowrap py-1 hide3 d-none">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping" >Ville</span>
       </div>
-    <%= text_field_tag "customer[city]", "", class:'form-control require-activation', placeholder: 'ville'%>
+    <%= text_field_tag "customer[city]", "", class:'' require-activation', placeholder: 'ville'%>
     </div>     
 
   <%= f.submit:"COMMANDER", class: 'btn btn-success float-right my-3'%>   
