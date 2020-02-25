@@ -4,7 +4,7 @@
   <div class='col-12 col-md-8 float-left text-justify my-2'>
     
     <%= simple_form_for @booking do |f|%>
-    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text fix p-0 w-100' }%>
+    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text p-0 w-100' }%>
 
        <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
@@ -17,22 +17,24 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Prénom</span>
       </div>
-    <%= text_field_tag "trainee[surname]", "", class:'input-group-text fix', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "trainee[surname]", "", class:'input-group-text w-100', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">Nom</span>
       </div>
-    <%= text_field_tag "trainee[name]", "", class:'input-group-text fix', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "trainee[name]", "", class:'input-group-text w-100', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "trainee[email]", "", class:'input-group-text fix', placeholder: 'mon.email@email.com', required: true%>
+    <%= text_field_tag "trainee[email]", "", class:'input-group-text w-100', placeholder: 'mon.email@email.com', required: true%>
     </div>
+
+
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
