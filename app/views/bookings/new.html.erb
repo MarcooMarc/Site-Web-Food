@@ -3,16 +3,14 @@
 <div class='row d-block'>
   <div class='col-12 col-md-8 float-left text-justify my-2'>
     
-    <%= simple_form_for @booking do |f|%>
+    <%= simple_form_for @booking do |f|%> 
+    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text p-0'}%>
 
-   
-    <%= f.input :workshop_id, :as => :hidden, :input_html => { :value => @workshop_id }, wrapper_html:  { class: 'input-group-text p-0 w-100 bg-light text-left'}%>
-
-       <div class="input-group flex-nowrap pb-2">
+      <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
            <span class="input-group-text bg-light text-left" id="addon-wrapping">Places</span>
         </div>
-    <%= f.input :seat, wrapper_html:  { class: 'input-group-text fix p-0 w-100 ' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'Place'%>
+    <%= f.input :seat, wrapper_html:  { class: 'input-group-text p-0 w-100 ' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'Place'%>
     </div>
   
     <div class="input-group flex-nowrap py-2">
@@ -33,7 +31,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text bg-light text-left" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "trainee[email]", "", class:'input-group-text', placeholder: 'mon.email@email.com', required: true%>
+    <%= text_field_tag "trainee[email]", "", class:'input-group-text w-100', placeholder: 'mon.email@email.com', required: true%>
     </div>
 
 
@@ -42,7 +40,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text bg-light text-left" id="addon-wrapping">Mobile</span>
       </div>
-    <%= text_field_tag "trainee[phonenumber]", "", class:'input-group-text', placeholder: '06 ** ** ** **', required: true%>
+    <%= text_field_tag "trainee[phonenumber]", "", class:'input-group-text w-100', placeholder: '06 ** ** ** **', required: true%>
     </div>
 
 
