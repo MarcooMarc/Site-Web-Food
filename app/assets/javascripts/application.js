@@ -104,8 +104,5 @@ window.onload= function (){
 }
 
 
-const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
-const btnValueComplete = document.querySelectorAll('.workshopComplete');
-
 
 
