@@ -108,15 +108,7 @@ const btnValueUncomplete = document.querySelectorAll('.workshopUncomplete');
 const btnValueComplete = document.querySelectorAll('.workshopComplete');
 const trigger1 = (document.querySelector(".number").innerHTML
 
-if (trigger1.value === "0 places") { 
-	  	btnValueComplete.forEach((event) => {
-	  		event.classList.remove('d-none');
-	  	})	
-	  	btnValueUncomplete.forEach((event) => {
-			event.classList.add('d-none');
-		})
-	} 
-	else if (trigger1.value != "0 places") { 
+btnValueUncomplete.forEach((event) => {
+	if 
+})
 
-	}
-}
