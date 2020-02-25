@@ -1,9 +1,5 @@
 @import "components/index.scss"
 
-.fix {width: 100%;
-    background: white;
-    text-align: left;
-}
 
 
 textarea.form-control {
@@ -23,6 +19,12 @@ textarea.form-control {
 html {
     font-size : 17px;
 }
+.fix {
+    width: 100%;
+    background: white;
+    text-align: left;
+}
+
 
 .cart {
     width: auto;
