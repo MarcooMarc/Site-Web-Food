@@ -1,7 +1,6 @@
 @import "components/index.scss"
 
-
- body {
+body {
     margin: 0;
     font-family: 'Open Sans Condensed', sans-serif !important;
     font-weight: 400;
