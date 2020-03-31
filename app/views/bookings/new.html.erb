@@ -4,34 +4,34 @@
   <div class='col-12 col-md-8 float-left text-justify my-2'>
     
     <%= simple_form_for @booking do |f|%> 
-    <%= f.input :workshop_id, :as => :hidden, wrapper_html:  { class: 'input-group-text p-0'}, :input_html => { :value => @workshop_id }%>
+    <%= f.input :workshop_id, :as => :hidden, wrapper_html:  { class: 'input-group-text form p-0 w-100'}, :input_html => { :value => @workshop_id }%>
 
       <div class="input-group flex-nowrap pb-2">
         <div class="input-group-prepend">
            <span class="input-group-text w-100 bg-light" id="addon-wrapping">Places</span>
         </div>
-    <%= f.input :seat, wrapper_html:  { class: 'input-group-text p-0 text-left ' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'Place'%>
+    <%= f.input :seat, wrapper_html:  { class: 'input-group-text p-0 text-left w-100' }, input_html: { min: '1', step: 'any'} , label: false, placeholder: 'Place'%>
     </div>
   
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text w-100 bg-light" id="addon-wrapping">Prénom</span>
       </div>
-    <%= text_field_tag "trainee[surname]", "", class:'input-group-text text-left', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "trainee[surname]", "", class:'input-group-text text-left w-100', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text w-100 bg-light  " id="addon-wrapping">Nom</span>
       </div>
-    <%= text_field_tag "trainee[name]", "", class:'input-group-text text-left', placeholder: 'tapez ici', required: true%>
+    <%= text_field_tag "trainee[name]", "", class:'input-group-text text-left w-100', placeholder: 'tapez ici', required: true%>
     </div>
 
     <div class="input-group flex-nowrap py-2">
       <div class="input-group-prepend">
         <span class="input-group-text w-100 bg-light" id="addon-wrapping">E-mail</span>
       </div>
-    <%= text_field_tag "trainee[email]", "", class:'input-group-text text-left', placeholder: 'mon.email@email.com', required: true%>
+    <%= text_field_tag "trainee[email]", "", class:'input-group-text text-left w-100', placeholder: 'mon.email@email.com', required: true%>
     </div>
 
 
@@ -40,7 +40,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text w-100 bg-light " id="addon-wrapping">Mobile</span>
       </div>
-    <%= text_field_tag "trainee[phonenumber]", "", class:'input-group-text text-left', placeholder: '06 ** ** ** **', required: true%>
+    <%= text_field_tag "trainee[phonenumber]", "", class:'input-group-text text-left w-100', placeholder: '06 ** ** ** **', required: true%>
     </div>
 
 

@@ -1,11 +1,6 @@
 @import "components/index.scss"
 
 
-
-textarea.form-control {
-    height: 5vh !important;
-}
-
  body {
     margin: 0;
     font-family: 'Open Sans Condensed', sans-serif !important;
