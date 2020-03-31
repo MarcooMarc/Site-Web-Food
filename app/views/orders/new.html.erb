@@ -28,7 +28,7 @@
         <div class="input-group-prepend">
            <span class="input-group-text hide3 d-none" id="addon-wrapping">Lieu de livraison</span>
          </div>
-      <%= f.input :delivery_place, :as => :text, wrapper_html: { class: 'input-group-text form p-0 w-100 hide3 d-none' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
+      <%= f.input :delivery_place, wrapper_html: { class: 'input-group-text form p-0 w-100 hide3 d-none' },  as: :select, collection: [['0','Massy'], ['2', 'Verrières - CVB - jeudi'], ['2', 'Antony - DAY BY DAY - vendredi']], label: false, label_method: :second, value_method: :second %>
     </div> 
     <i class="text-muted d-none hide3">* Les livraisons sont à récupérer à partir de 11h</i>
 
