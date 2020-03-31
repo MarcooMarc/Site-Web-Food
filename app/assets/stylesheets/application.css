@@ -1,11 +1,11 @@
 @import "components/index.scss"
 
 textarea.form-control {
-    height: 10vh !important;
+    height: 4vh;
 }
 
-.form-control {
-    height: 4vh !important;
+.height {
+    height: 20vh !important;
 }
 
 body {
