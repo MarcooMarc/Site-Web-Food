@@ -1,7 +1,7 @@
 <h1 class="mt-2">Valider votre inscription</h1>
 
 <div class='row d-block'>
-  <div class='col-12 col-md-8 float-left text-justify my-2'>
+  <div class='col-12 col-md-8 float-left text-justify mt-3'>
     
     <%= simple_form_for @booking do |f|%> 
     <%= f.input :workshop_id, :as => :hidden, wrapper_html:  { class: 'd-none'}, :input_html => { :value => @workshop_id }%>
@@ -50,7 +50,7 @@
   <div class='col-12 col-md-4 h-100 d-flex justify-content-between flex-column'> 
     <div class="d-flex align-content-between flex-column">
       <div class='d-none hide4'>
-        <div class='cart border d-block mt-4'>
+        <div class='cart border d-block mt-3'>
           <h4 class="text-center my-3">Mon Workshop</h4>
           
           <div class='d-flex justify-content-between mx-3'>
